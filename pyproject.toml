@@ -1,0 +1,53 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "tii-client"
+version = "1.0.0"
+description = "TII's cloud client interface."
+authors = ["TII"]
+license = "Apache License 2.0"
+readme = "README.md"
+homepage = "https://tii.qibo.science/"
+repository = "https://github.com/qiboteam/tii-client/"
+documentation = "https://github.com/qiboteam/tii-client/"
+keywords = []
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+packages = [{ include = "tii_client", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.14"
+qibo-client = "^0.2.1"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+pytest-cov = "^4.1.0"
+pylint = "^3.0.3"
+responses = "^0.25.3"
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.2.6"
+recommonmark = "^0.7.1"
+sphinx-copybutton = "^0.5.2"
+nbsphinx = "^0.9.3"
+furo = "^2023.9.10"
+
+[tool.poe.tasks]
+test = "pytest"
+lint = "pylint --errors-only src"
+lint-warnings = "pylint --exit-zero src"
+docs = "make -C doc html"
+docs-clean = "make -C doc clean"
+test-docs = "make -C doc doctest"
+
+[tool.pylint.reports]
+output-format = "colorized"
+
+[tool.pytest.ini_options]
+testpaths = ['tests/']
+filterwarnings = ['ignore::RuntimeWarning']
+addopts = ['--cov=src/tii_client', '--cov-report=xml', '--cov-report=html']
