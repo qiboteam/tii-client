@@ -1,4 +1,4 @@
-from tii_client.tii_client import Client as TiiClient
+from tii_quantum.tii_client import Client as TiiClient
 
 
 class TestTiiClient:

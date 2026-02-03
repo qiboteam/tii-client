@@ -3,21 +3,21 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
-name = "tii-client"
+name = "tii-quantum"
 version = "0.1.0"
-description = "TII's cloud client interface."
+description = "TII Quantum Computing Cloud Client"
 authors = ["TII"]
 license = "Apache License 2.0"
 readme = "README.md"
 homepage = "https://tii.qibo.science/"
-repository = "https://github.com/qiboteam/tii-client/"
-documentation = "https://github.com/qiboteam/tii-client/"
+repository = "https://github.com/qiboteam/tii-quantum/"
+documentation = "https://qibo.science/tii-quantum/stable"
 keywords = []
 classifiers = [
   "Programming Language :: Python :: 3",
   "Topic :: Scientific/Engineering :: Physics",
 ]
-packages = [{ include = "tii_client", from = "src" }]
+packages = [{ include = "tii_quantum", from = "src" }]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.14"
@@ -50,4 +50,4 @@ output-format = "colorized"
 [tool.pytest.ini_options]
 testpaths = ['tests/']
 filterwarnings = ['ignore::RuntimeWarning']
-addopts = ['--cov=src/tii_client', '--cov-report=xml', '--cov-report=html']
+addopts = ['--cov=src/tii_quantum', '--cov-report=xml', '--cov-report=html']

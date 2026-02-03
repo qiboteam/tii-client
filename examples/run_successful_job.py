@@ -3,7 +3,7 @@ from pathlib import Path
 
 import qibo
 
-from tii_client import Client
+from tii_quantum import Client
 
 # create the circuit you want to run
 num_qubits = 5

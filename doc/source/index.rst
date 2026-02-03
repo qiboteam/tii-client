@@ -1,12 +1,12 @@
-.. tii-client documentation master file, created by
+.. tii-quantum documentation master file, created by
    sphinx-quickstart on Fri Dec 15 11:46:09 2023.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-What is tii-client?
+What is tii-quantum?
 ====================
 
-TII-client is the front end interface to TII's quantum computing labs using Qibo.
+TII-Quantum is the front end interface to TII Quantum Computing Cloud Platform.
 
 The main purpose of the project is to create a client tool written in python
 able to launch quantum computations through HTTP.
@@ -24,11 +24,11 @@ conflicts with previously installed packages.
    $ python -m venv ./env
    source activate ./env/bin/activate
 
-The tii-client package can be installed through pip:
+The tii-quantum package can be installed through pip:
 
 .. code-block:: bash
 
-   pip install tii-client
+   pip install tii-quantum
 
 
 Quick tutorial
@@ -43,15 +43,15 @@ remote server.
    token to run computations on the cluster.
 
 The following example shows how to launch a simulation job.
-Remember to replace `your qibo token` string with your actual valid token
+Remember to replace `your token` string with your actual valid token
 receive after registration.
 
 .. code-block:: python
 
-   >>> from tii_client import Client
+   >>> from tii_quantum import Client
    >>> import qibo
    >>> circuit = qibo.models.QFT(5)
-   >>> client = Client("your qibo token")
+   >>> client = Client("your token")
    >>> job = client.run_circuit(circuit, device="k2", project="personal", nshots=100)
    >>> result = job.result()
    >>> print(result)

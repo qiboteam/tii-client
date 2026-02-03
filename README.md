@@ -1,4 +1,7 @@
-# TII cloud client
+# TII Quantum Cloud Client
+
+The documentation of the project can be found
+[here](https://qibo.science/tii-quantum/stable/).
 
 ## Install
 
@@ -12,10 +15,10 @@ python -m venv ./env
 source activate ./env/bin/activate
 ```
 
-The `tii-client` package can be installed through `pip`:
+The `tii-quantum` package can be installed through `pip`:
 
 ```bash
-pip install tii-client
+pip install tii-quantum
 ```
 
 ## Quick start
@@ -34,14 +37,14 @@ please visit the dashboard at your institution.
 
 ```python
 import qibo
-import tii_client
+import tii_quantum
 
 # create the circuit you want to run
 circuit = qibo.models.QFT(5)
 
 # authenticate to server through the client instance
 token = "your-token"
-client = tii_client.Client(token)
+client = tii_quantum.Client(token)
 
 # run the circuit
 device = "device_name"

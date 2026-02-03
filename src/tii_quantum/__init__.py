@@ -1,4 +1,4 @@
-"""The `tii-client` package"""
+"""The `tii-quantum` package"""
 
 import importlib.metadata as im
 
